@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+/*
+  Design tokens — arah "Ruang Tenang"
+  ------------------------------------
+  Palet menjauh dari default cream/terracotta atau near-black/neon:
+  dasar abu-hijau kabut, aksen madu keemasan, teal dalam untuk kontras.
+  Terinspirasi suasana subuh/senja — waktu paling banyak orang merenung.
+*/
+@theme {
+  --color-mist-50: #F7F8F6;
+  --color-mist-100: #EEF2F0;
+  --color-mist-200: #DCE4E0;
+
+  --color-sage-50: #EEF3EE;
+  --color-sage-100: #D3E1D5;
+  --color-sage-400: #7C9885;
+  --color-sage-600: #4A6C6F;
+  --color-sage-700: #375254;
+
+  --color-honey-400: #E3B778;
+  --color-honey-500: #D9A05B;
+  --color-honey-600: #B87F3E;
+
+  --color-ink-50: #F9FAF9;
+  --color-ink-200: #DDE2DF;
+  --color-ink-500: #6B7570;
+  --color-ink-700: #3A423E;
+  --color-ink-900: #212623;
+
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Manrope", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --animate-breathe: breathe 4.8s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.15); opacity: 1; }
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Visible keyboard focus — jangan hilangkan demi aksesibilitas */
+:focus-visible {
+  outline: 2px solid var(--color-sage-600);
+  outline-offset: 2px;
+}
